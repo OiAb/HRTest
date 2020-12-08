@@ -34,6 +34,22 @@
 		<url-pattern>/deconnexion</url-pattern>
 	</servlet-mapping>
 	<servlet>
+		<servlet-name>Quiz</servlet-name>
+		<servlet-class>com.sdzee.servlets.Quiz</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Quiz</servlet-name>
+		<url-pattern>/quiz</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>SelectTopic</servlet-name>
+		<servlet-class>com.sdzee.servlets.SelectTopic</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SelectTopic</servlet-name>
+		<url-pattern>/selectTopic</url-pattern>
+	</servlet-mapping>
+	<servlet>
 	    <servlet-name>GestionTestJDBC</servlet-name>
 	    <servlet-class>com.sdzee.servlets.GestionTestJDBC</servlet-class>
     </servlet>

@@ -42,14 +42,16 @@ public class Authentification extends HttpServlet {
          */
         if ( formconnecté.getErreurs().isEmpty() ) {
             session.setAttribute( ATT_SESSION_USER, utilisateurconnecté );
+            request.setAttribute( ATT_FORM, formconnecté );
+            request.setAttribute( ATT_USER, utilisateurconnecté );
+            this.getServletContext().getRequestDispatcher( "/dashboardColl.jsp" ).forward( request, response );
         } else {
             session.setAttribute( ATT_SESSION_USER, null );
+            /* Stockage du formulaire et du bean dans l'objet request */
+            request.setAttribute( ATT_FORM, formconnecté );
+            request.setAttribute( ATT_USER, utilisateurconnecté );
+            this.getServletContext().getRequestDispatcher( VUE ).forward( request, response );
         }
 
-        /* Stockage du formulaire et du bean dans l'objet request */
-        request.setAttribute( ATT_FORM, formconnecté );
-        request.setAttribute( ATT_USER, utilisateurconnecté );
-
-        this.getServletContext().getRequestDispatcher( VUE ).forward( request, response );
     }
 }
